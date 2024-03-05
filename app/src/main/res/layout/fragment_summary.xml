@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/popular"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:text="Most Common Mood:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/popdate"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/popdate"
+        android:layout_width="134dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Date:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/popularMood"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="84dp"
+        android:text="Most Common Mood:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/populardate"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/populardate"
+        android:layout_width="134dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="32dp"
+        android:text="Date:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/latest"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="160dp"
+        android:text="Latest Mood:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/latestd"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/latestd"
+        android:layout_width="134dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="36dp"
+        android:text="Date:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/latestMood"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="232dp"
+        android:text="Latest Mood:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/latestdate"
+        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/latestdate"
+        android:layout_width="134dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="32dp"
+        android:text="Date:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/first"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="312dp"
+        android:text="First Mood:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/firstd"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/firstd"
+        android:layout_width="134dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="312dp"
+        android:layout_marginEnd="36dp"
+        android:text="Date:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/firstMood"
+        android:layout_width="125dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="388dp"
+        android:text="Latest Mood:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/firstdate"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/firstdate"
+        android:layout_width="134dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="384dp"
+        android:layout_marginEnd="36dp"
+        android:text="Date:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

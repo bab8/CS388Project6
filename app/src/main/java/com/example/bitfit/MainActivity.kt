@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.bitfit.databinding.ActivityMainBinding
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import okhttp3.Headers
@@ -37,45 +39,28 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        moodsRecyclerView = findViewById(R.id.moods)
-        val moodAdapter = MoodAdapter(this, moods)
-        moodsRecyclerView.adapter = moodAdapter
+        replaceFragment(MoodListFragment())
+    }
+    private fun replaceFragment(moodListFragment: MoodListFragment) {
+        val fragmentManager = supportFragmentManager
+        // define your fragments here
+        val fragment1: Fragment = MoodListFragment()
+        val fragment2: Fragment = SummaryFragment()
 
-        lifecycleScope.launch {
-            (application as MoodApplication).db.moodDao().getAll().collect { databaseList ->
-                databaseList.map { entity ->
-                    Mood(
-                        entity.mood,
-                        entity.date
-                    )
-                }.also { mappedList ->
-                    moods.clear()
-                    moods.addAll(mappedList)
-                    moodAdapter.notifyDataSetChanged()
-                }
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+
+        // handle navigation selection
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            lateinit var fragment: Fragment
+            when (item.itemId) {
+                R.id.Moods_list -> fragment = fragment1
+                R.id.Mood_Summary -> fragment = fragment2
             }
+            fragmentManager.beginTransaction().replace(R.id.mood_frame_layout, fragment).commit()
+            true
         }
 
-        moodsRecyclerView.layoutManager = LinearLayoutManager(this).also {
-            val dividerItemDecoration = DividerItemDecoration(this, it.orientation)
-            moodsRecyclerView.addItemDecoration(dividerItemDecoration)
-        }
-
-
-        //Make Button Start Detailed Activity
-        val addMood = findViewById<Button>(R.id.submit)
-        val deleteMoods = findViewById<Button>(R.id.delete)
-
-        addMood.setOnClickListener{
-            val intent = Intent(this@MainActivity, DetailActivity::class.java)
-            startActivity(intent)
-        }
-
-        deleteMoods.setOnClickListener{
-            lifecycleScope.launch(Dispatchers.IO) {
-                (application as MoodApplication).db.moodDao().deleteAll()
-            }
-        }
-
+        // Set default selection
+        bottomNavigationView.selectedItemId = R.id.Moods_list
     }
 }

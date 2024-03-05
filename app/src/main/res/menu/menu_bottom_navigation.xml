@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/Moods_list"
+        android:enabled="true"
+        android:title="Moods"
+        android:icon="@drawable/baseline_child_care_24"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/Mood_Summary"
+        android:enabled="true"
+        android:title="Summary"
+        android:icon="@drawable/baseline_chat_24"
+        app:showAsAction="ifRoom" />
+
+</menu>

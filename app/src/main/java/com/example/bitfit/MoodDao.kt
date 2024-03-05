@@ -14,6 +14,15 @@ interface MoodDao {
     @Insert
     fun insert(moodEntity: MoodEntity)
 
+    @Query("SELECT * FROM mood_table GROUP BY mood ORDER BY COUNT(*) DESC LIMIT 1")
+    fun mostPopular(): Flow<List<MoodEntity>>
+
+    @Query("SELECT * FROM mood_table ORDER BY date DESC LIMIT 1")
+    fun mostRecent(): Flow<List<MoodEntity>>
+
+    @Query("SELECT * FROM mood_table LIMIT 1")
+    fun firstMood(): Flow<List<MoodEntity>>
+
     @Query("DELETE FROM mood_table")
     fun deleteAll()
 }
